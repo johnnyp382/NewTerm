@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     paths-ignore:
       - '.gitignore'
@@ -11,12 +12,11 @@ on:
       - '.gitignore'
       - '**/*.md'
       - 'assets/**'
-  workflow_dispatch:
 
 jobs:
   build:
     name: Build
-    runs-on: macos-12
+    runs-on: macos-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
